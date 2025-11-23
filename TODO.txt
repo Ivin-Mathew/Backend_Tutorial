@@ -1,0 +1,6 @@
+Plants directory
+- Add plants
+    - Name
+    - Scientific Name
+    - ImageURL
+    - Description
