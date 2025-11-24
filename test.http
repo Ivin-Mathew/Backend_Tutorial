@@ -1,0 +1,34 @@
+@host = http://localhost:3123/plants
+
+POST {{host}}
+Content-Type: application/json
+
+{
+    "name": "Plant 1",
+    "imgUrl": "this is the url",
+    "description": "Description for plant 1"
+} 
+
+###GET
+GET {{host}}
+
+###PATCH
+PATCH {{host}}
+Content-Type: application/json
+
+{
+    "id":4,
+    "changes":{
+        "name":"updated name for plant",
+        "imgUrl":"updated url for image",
+        "description": "Updated description"
+    }
+}
+
+###DELETE
+DELETE {{host}}
+Content-Type: application/json
+
+{
+    "id":4
+}

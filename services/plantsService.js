@@ -16,7 +16,7 @@ exports.create = (payload) =>{
     return(item);
 }
 
-exports.modify = (id, changes) =>{
+exports.modify = ({id, changes}) =>{
     const idx = db.items.findIndex(i=> i.id === id);
     if(idx === -1){
         return null;
@@ -30,7 +30,7 @@ exports.modify = (id, changes) =>{
     return db.items[id];
 }
 
-exports.delete = (id) =>{
+exports.delete = ({id}) =>{
     const idx = db.items.findIndex(i=> i.id === id);
     if(idx === -1){
         return null;

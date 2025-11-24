@@ -7,3 +7,5 @@ router.get("/", plantsController.getAll);
 router.post("/", plantsController.create);
 router.patch("/", plantsController.modify);
 router.delete("/", plantsController.delete);
+
+module.exports = router;
