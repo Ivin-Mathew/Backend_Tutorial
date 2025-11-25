@@ -9,10 +9,15 @@ exports.getAll = (req, res) => {
 };
 
 exports.create = (req, res) => {
-  const payload = req.body;
-  if (!payload) {
+  const payload = req.body || {};
+  if(req.file){
+    payload.imgUrl = `/uploads/${req.file.filename}`;
+  }
+
+  if (!payload || !payload.name) {
     return res.status(400).json({ ok: false, error: "Missing payload" });
   }
+  
   const created = plantsService.create(payload);
   res.status(201).json({ ok: true, data: created });
 };

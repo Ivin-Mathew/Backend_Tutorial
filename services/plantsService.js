@@ -27,7 +27,7 @@ exports.modify = ({id, changes}) =>{
         id
     };
 
-    return db.items[id];
+    return db.items[idx];
 }
 
 exports.delete = ({id}) =>{
